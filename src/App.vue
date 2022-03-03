@@ -3,14 +3,14 @@
  * @Author: sjq
  * @Date: 2020-04-28 17:13:54
  * @LastEditors: sjq
- * @LastEditTime: 2020-05-27 15:21:41
+ * @LastEditTime: 2022-03-03 16:56:03
  -->
 <template>
   <div id="app">
     <input type="text" v-model="num" />
-    {{num/200*100}}%
+    {{ (num / 200) * 100 }}%
     <div class="gradual-box">
-      <div :style="{width:progressWidth}" class="progress"></div>
+      <div :style="{ width: progressWidth }" class="progress"></div>
       <div class="white-box">
         <span :key="i" class="white-border" v-for="i in 20"></span>
       </div>
@@ -19,21 +19,19 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  components: {
-  },
-  data () {
+  name: "App",
+  components: {},
+  data() {
     return {
-      num: '',
-    }
+      num: "",
+    };
   },
   computed: {
-    progressWidth () {
-      return (this.num / 200 * 100) + 'px'
-    }
-  }
+    progressWidth() {
+      return (this.num / 200) * 100 + "px";
+    },
+  },
 };
 </script>
 
